@@ -1,0 +1,1717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE BlockLangDef SYSTEM "lang_def.dtd">
+<!-- This describes every BlockGenus, BlockDrawer, BlockFamilies in Starlogo-TNG. 
+	Note: For BlockGenus, if genus A relies on another genus B, that genus B 
+	must be specified in the xml file before genus A is specified./ We impose 
+	this requirement so that sanity checks can be made regarding the validity 
+	of a default argument when the BlockGenuses are first loaded. -->
+<BlockLangDef>
+
+	<BlockConnectorShapes>
+		<BlockConnectorShape shape-type="number"
+			shape-number="1" />
+		<BlockConnectorShape shape-type="number-list"
+			shape-number="2" />
+		<BlockConnectorShape shape-type="number-inv"
+			shape-number="3" />
+		<BlockConnectorShape shape-type="boolean"
+			shape-number="4" />
+		<BlockConnectorShape shape-type="boolean-list"
+			shape-number="5" />
+		<BlockConnectorShape shape-type="boolean-inv"
+			shape-number="6" />
+		<BlockConnectorShape shape-type="string"
+			shape-number="7" />
+		<BlockConnectorShape shape-type="string-list"
+			shape-number="8" />
+		<BlockConnectorShape shape-type="string-inv"
+			shape-number="9" />
+		<BlockConnectorShape shape-type="poly"
+			shape-number="10" />
+		<BlockConnectorShape shape-type="poly-list"
+			shape-number="11" />
+		<BlockConnectorShape shape-type="poly-inv"
+			shape-number="12" />
+		<BlockConnectorShape shape-type="proc-param"
+			shape-number="13" />
+		<BlockConnectorShape shape-type="cmd"
+			shape-number="14" />
+		<BlockConnectorShape shape-type="cmd1"
+			shape-number="15" />
+		<BlockConnectorShape shape-type="cmd2"
+			shape-number="16" />
+		<BlockConnectorShape shape-type="cmd3"
+			shape-number="17" />
+	</BlockConnectorShapes>
+
+	<BlockGenuses>
+		<!-- Master -->
+		<BlockGenus name="reset" kind="data" color="255 140 0"
+			initlabel="bg.reset"></BlockGenus>
+		<BlockGenus name="m_write" kind="data" color="255 140 0" initlabel="bg.m_write" editable-label="no"></BlockGenus>
+		<BlockGenus name="m_read" kind="data" color="0 238 0" initlabel="bg.m_read" editable-label="no"></BlockGenus>
+		<BlockGenus name="m_readAD" kind="data" color="0 238 0" initlabel="bg.m_readAD" editable-label="no"></BlockGenus>
+		<BlockGenus name="m_available" kind="data" color="0 238 0" initlabel="bg.m_available" editable-label="no"></BlockGenus>
+		<BlockGenus name="m_writeAD" kind="data" color="255 140 0" initlabel="bg.m_writeAD" editable-label="no"></BlockGenus>
+		<BlockGenus name="m_clear" kind="data" color="255 140 0" initlabel="bg.m_clear" editable-label="no"></BlockGenus>
+			
+		<!-- Tools -->
+		<BlockGenus name="delay" kind="data" color="0 238 0"
+			initlabel="bg.delay"></BlockGenus>
+		<BlockGenus name="if" kind="data" color="0 238 0"
+			initlabel="bg.if"></BlockGenus>
+		<BlockGenus name="ifelse" kind="data" color="0 238 0"
+			initlabel="bg.ifelse"></BlockGenus>
+		<BlockGenus name="while" kind="data" color="0 238 0"
+			initlabel="bg.while"></BlockGenus>
+		<BlockGenus name="for" kind="data" color="0 238 0"
+			initlabel="bg.for"></BlockGenus>
+		<BlockGenus name="True" kind="data" color="0 0 255"
+			initlabel="bg.True"></BlockGenus>
+		<BlockGenus name="False" kind="data" color="0 0 255"
+			initlabel="bg.False"></BlockGenus>
+		<BlockGenus name="setupFun" kind="data" color="255 228 181"
+			initlabel="bg.setupFun"></BlockGenus>
+
+		<!-- Common -->
+		<BlockGenus name="setOnboardRGB" kind="function" color="255 140 0"
+			initlabel="bg.setOnboardRGB"></BlockGenus>
+
+
+		<!-- Add -->
+		<BlockGenus name="addControl" kind="add" color="227 227 227"
+			initlabel="bg.addContrrol">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Control.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addSignal" kind="add" color="227 227 227"
+			initlabel="bg.addSignal">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Signal.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addDriver" kind="add" color="227 227 227"
+			initlabel="bg.addDriver">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Driver.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addDisplay" kind="add" color="227 227 227"
+			initlabel="bg.addDisplay">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Display.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addObserver" kind="add" color="227 227 227"
+			initlabel="bg.addObserver">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Observer.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addPower" kind="add" color="227 227 227"
+			initlabel="bg.addPower">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Power.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addMotion" kind="add" color="227 227 227"
+			initlabel="bg.addMotion">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Motion.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addDistance" kind="add" color="227 227 227"
+			initlabel="bg.addDistance">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Distance.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+		<BlockGenus name="addCommunication" kind="add" color="227 227 227"
+			initlabel="bg.addCommunication">
+			<Images>
+				<Image>
+					<FileLocation>mfe/arduino/block/images/Communication.png</FileLocation>
+				</Image>
+			</Images>
+		</BlockGenus>
+
+
+		<!-- Contrrol -->
+		<BlockGenus name="getSW1" kind="data" color="0 238 0"
+			initlabel="bg.getSW1"></BlockGenus>
+		<BlockGenus name="getSW2" kind="data" color="0 238 0"
+			initlabel="bg.getSW2"></BlockGenus>
+		<BlockGenus name="getSW3" kind="data" color="0 238 0"
+			initlabel="bg.getSW3"></BlockGenus>
+		<BlockGenus name="getSW4" kind="data" color="0 238 0"
+			initlabel="bg.getSW4"></BlockGenus>
+		<BlockGenus name="getM1" kind="data" color="0 238 0"
+			initlabel="bg.getM1"></BlockGenus>
+		<BlockGenus name="getM2" kind="data" color="0 238 0"
+			initlabel="bg.getM2"></BlockGenus>
+		<BlockGenus name="setSensitivity" kind="data" color="255 140 0"
+			initlabel="bg.setSensitivity"></BlockGenus>
+		<BlockGenus name="KEY_LEFT" kind="data" color="0 0 255"
+			initlabel="bg.KEY_LEFT"></BlockGenus>
+		<BlockGenus name="KEY_RIGHT" kind="data" color="0 0 255"
+			initlabel="bg.KEY_RIGHT"></BlockGenus>
+		<BlockGenus name="true" kind="data" color="0 0 255"
+			initlabel="bg.true"></BlockGenus>
+		<BlockGenus name="false" kind="data" color="0 0 255"
+			initlabel="bg.false"></BlockGenus>
+		<BlockGenus name="SW1Press" kind="data" color="64 224 208" initlabel="bg.SW1Press" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW1Release" kind="data" color="64 224 208" initlabel="bg.SW1Release" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW2Press" kind="data" color="64 224 208" initlabel="bg.SW2Press" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW2Release" kind="data" color="64 224 208" initlabel="bg.SW2Release" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW3Left" kind="data" color="64 224 208" initlabel="bg.SW3Left" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW3Right" kind="data" color="64 224 208" initlabel="bg.SW3Right" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW4Variety" kind="data" color="64 224 208" initlabel="bg.SW4Variety" editable-label="no"></BlockGenus>
+		<BlockGenus name="SW4Right" kind="data" color="64 224 208" initlabel="bg.SW4Right" editable-label="no"></BlockGenus>
+		<BlockGenus name="M1Press" kind="data" color="64 224 208" initlabel="bg.M1Press" editable-label="no"></BlockGenus>
+		<BlockGenus name="M1Release" kind="data" color="64 224 208" initlabel="bg.M1Release" editable-label="no"></BlockGenus>
+		<BlockGenus name="M2Press" kind="data" color="64 224 208" initlabel="bg.M2Press" editable-label="no"></BlockGenus>
+		<BlockGenus name="M2Release" kind="data" color="64 224 208" initlabel="bg.M2Release" editable-label="no"></BlockGenus>
+				
+		<!-- Signal -->
+		<BlockGenus name="setLedRGB" kind="data" color="255 140 0"
+			initlabel="bg.setLedRGB"></BlockGenus>
+		<BlockGenus name="setLed" kind="data" color="255 140 0"
+			initlabel="bg.setLed"></BlockGenus>
+		<BlockGenus name="setBuzzer" kind="data" color="255 140 0"
+			initlabel="bg.setBuzzer"></BlockGenus>
+		<BlockGenus name="setBuzzer_ad" kind="data" color="255 140 0"
+			initlabel="bg.setBuzzer_ad"></BlockGenus>
+		<BlockGenus name="setVibration" kind="data" color="255 140 0"
+			initlabel="bg.setVibration"></BlockGenus>
+		<BlockGenus name="setBuzzerOFF" kind="data" color="255 140 0"
+			initlabel="bg.setBuzzerOFF"></BlockGenus>
+		<BlockGenus name="LED_RED" kind="data" color="0 0 255"
+			initlabel="bg.LED_RED" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_GREEN" kind="data" color="0 0 255"
+			initlabel="bg.LED_GREEN" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_BLUE" kind="data" color="0 0 255"
+			initlabel="bg.LED_BLUE" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_YELLOW" kind="data" color="0 0 255"
+			initlabel="bg.LED_YELLOW" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_PURPLE" kind="data" color="0 0 255"
+			initlabel="bg.LED_PURPLE" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_LIGHT_BLUE" kind="data" color="0 0 255"
+			initlabel="bg.LED_LIGHT_BLUE" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_WHITE" kind="data" color="0 0 255"
+			initlabel="bg.LED_WHITE" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="LED_None" kind="data" color="0 0 255"
+			initlabel="bg.LED_None" editable-label="no">
+		</BlockGenus>
+
+		<!-- Driver -->
+		<BlockGenus name="stopMotorA" kind="data" color="255 140 0"
+			initlabel="bg.stopMotorA"></BlockGenus>
+		<BlockGenus name="stopMotorB" kind="data" color="255 140 0"
+			initlabel="bg.stopMotorB"></BlockGenus>
+		<BlockGenus name="setMotorA" kind="data" color="255 140 0"
+			initlabel="bg.setMotorA"></BlockGenus>
+		<BlockGenus name="setMotorB" kind="data" color="255 140 0"
+			initlabel="bg.setMotorB"></BlockGenus>
+		<BlockGenus name="DC_DIR_Foreward" kind="data" color="0 0 255"
+			initlabel="bg.DC_DIR_Foreward"></BlockGenus>
+		<BlockGenus name="DC_DIR_Reversal" kind="data" color="0 0 255"
+			initlabel="bg.DC_DIR_Reversal" editable-label="no">
+		</BlockGenus>
+
+		<!-- Display -->
+		<BlockGenus name="print" kind="data" color="255 140 0"
+			initlabel="bg.print"></BlockGenus>
+		<BlockGenus name="print_xy" kind="data" color="255 140 0"
+			initlabel="bg.print_xy"></BlockGenus>
+		<BlockGenus name="print_advance" kind="data" color="255 140 0"
+			initlabel="bg.print_advance"></BlockGenus>
+		<BlockGenus name="setDisplayDirection" kind="data" color="255 140 0"
+			initlabel="bg.setDisplayDirection" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="enablePageturning" kind="data" color="255 140 0"
+			initlabel="bg.enablePageturning" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="disablePageturning" kind="data" color="255 140 0"
+			initlabel="bg.disablePageturning" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="getPagetButton" kind="data" color="0 238 0"
+			initlabel="bg.getPagetButton" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="clearPage" kind="data" color="255 140 0"
+			initlabel="bg.clearPage" editable-label="no">
+		</BlockGenus>
+
+		<BlockGenus name="clearAllPages" kind="data" color="255 140 0"
+			initlabel="bg.clearAllPages" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="trunToPage" kind="data" color="255 140 0"
+			initlabel="bg.trunToPage" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="DIR_ROTATED" kind="data" color="0 0 255"
+			initlabel="bg.DIR_ROTATED" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="DIR_INITIAL" kind="data" color="0 0 255"
+			initlabel="bg.DIR_INITIAL" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SIZE_SMALL" kind="data" color="0 0 255"
+			initlabel="bg.SIZE_SMALL" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SIZE_BIG" kind="data" color="0 0 255"
+			initlabel="bg.SIZE_BIG" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SHOW_NORMAL" kind="data" color="0 0 255"
+			initlabel="bg.SHOW_NORMAL" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SHOW_SHADOW" kind="data" color="0 0 255"
+			initlabel="bg.SHOW_SHADOW" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="BUTTON_NONE" kind="data" color="0 0 255"
+			initlabel="bg.BUTTON_NONE" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="BUTTON_L" kind="data" color="0 0 255"
+			initlabel="bg.BUTTON_L" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="BUTTON_R" kind="data" color="0 0 255"
+			initlabel="bg.BUTTON_R" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="BUTTON_M" kind="data" color="0 0 255"
+			initlabel="bg.BUTTON_M" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="BUTTON_ML" kind="data" color="0 0 255"
+			initlabel="bg.BUTTON_ML" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="ButtonLeft" kind="data" color="64 224 208" initlabel="bg.ButtonLeft" editable-label="no"></BlockGenus>
+		<BlockGenus name="ButtonRight" kind="data" color="64 224 208" initlabel="bg.ButtonRight" editable-label="no"></BlockGenus>
+		<BlockGenus name="ButtonPress" kind="data" color="64 224 208" initlabel="bg.ButtonPress" editable-label="no"></BlockGenus>
+		<BlockGenus name="ButtonLongPress" kind="data" color="64 224 208" initlabel="bg.ButtonLongPress" editable-label="no"></BlockGenus>
+				
+		<!-- Observer -->
+		<BlockGenus name="getTemperature" kind="data" color="0 238 0"
+			initlabel="bg.getTemperature" editable-label="no"></BlockGenus>
+		<BlockGenus name="getHumidity" kind="data" color="0 238 0"
+			initlabel="bg.getHumidity" editable-label="no"></BlockGenus>
+		<BlockGenus name="getLight" kind="data" color="0 238 0"
+			initlabel="bg.getLight" editable-label="no"></BlockGenus>
+		<BlockGenus name="getVolume" kind="data" color="0 238 0"
+			initlabel="bg.getVolume" editable-label="no"></BlockGenus>
+		<BlockGenus name="LightVariety" kind="data" color="64 224 208" initlabel="bg.LightVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="LightUpdate" kind="data" color="64 224 208" initlabel="bg.LightUpdate" editable-label="no"></BlockGenus>
+		<BlockGenus name="VolumeVariety" kind="data" color="64 224 208" initlabel="bg.VolumeVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="VolumeUpdate" kind="data" color="64 224 208" initlabel="bg.VolumeUpdate" editable-label="no"></BlockGenus>
+		<BlockGenus name="TemperatureVariety" kind="data" color="64 224 208" initlabel="bg.TemperatureVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="TemperatureUpdate" kind="data" color="64 224 208" initlabel="bg.TemperatureUpdate" editable-label="no"></BlockGenus>
+		<BlockGenus name="HumidityVariety" kind="data" color="64 224 208" initlabel="bg.HumidityVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="HumidityUpdate" kind="data" color="64 224 208" initlabel="bg.HumidityUpdate" editable-label="no"></BlockGenus>
+		
+		
+		<!-- Power -->
+		<BlockGenus name="shutdownTime" kind="data" color="255 140 0"
+			initlabel="bg.shutdownTime" editable-label="no"></BlockGenus>
+		<BlockGenus name="getBatteryValue" kind="data" color="0 238 0"
+			initlabel="bg.getBatteryValue" editable-label="no"></BlockGenus>
+		<BlockGenus name="lightsOn" kind="data" color="255 140 0"
+			initlabel="bg.lightsOn" editable-label="no"></BlockGenus>
+		<BlockGenus name="lightsOff" kind="data" color="255 140 0"
+			initlabel="bg.lightsOff" editable-label="no"></BlockGenus>
+		<BlockGenus name="BatteryVariety" kind="data" color="64 224 208"
+			initlabel="bg.BatteryVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="BatteryUpdate" kind="data" color="64 224 208"
+			initlabel="bg.BatteryUpdate" editable-label="no"></BlockGenus>
+
+		<!-- Motion -->
+		<BlockGenus name="getAcceleration" kind="data" color="0 238 0"
+			initlabel="bg.getAcceleration" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="getAngularVelocity" kind="data" color="0 238 0"
+			initlabel="bg.getAngularVelocity" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="getAngle" kind="data" color="0 238 0"
+			initlabel="bg.getAngle" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="getMagnetometer" kind="data" color="0 238 0"
+			initlabel="bg.getMagnetometer" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="calibrateGyroAccelerometer" kind="data"
+			color="255 140 0" initlabel="bg.calibrateGyroAccelerometer"
+			editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="calibrateMagnetometer" kind="data" color="255 140 0"
+			initlabel="bg.calibrateMagnetometer" editable-label="no">
+		</BlockGenus>
+
+		<BlockGenus name="SPACE_X" kind="data" color="0 0 255"
+			initlabel="bg.SPACE_X" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SPACE_Y" kind="data" color="0 0 255"
+			initlabel="bg.SPACE_Y" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="SPACE_Z" kind="data" color="0 0 255"
+			initlabel="bg.SPACE_Z" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="DataUpdate" kind="data" color="64 224 208" initlabel="bg.DataUpdate" editable-label="no"></BlockGenus>
+		
+		<!-- Distance -->
+		<BlockGenus name="getDistance" kind="data" color="0 238 0"
+			initlabel="bg.getDistance" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="DistanceVariety" kind="data" color="64 224 208" initlabel="bg.DistanceVariety" editable-label="no"></BlockGenus>
+		<BlockGenus name="DistanceUpdate" kind="data" color="64 224 208" initlabel="bg.DistanceUpdate" editable-label="no"></BlockGenus>
+		
+		
+		<!-- Communication -->
+		<BlockGenus name="available" kind="data" color="255 140 0"
+			initlabel="bg.available" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="read" kind="data" color="255 140 0"
+			initlabel="bg.read" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="write" kind="data" color="0 238 0"
+			initlabel="bg.write" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="storeIRmessage" kind="data" color="0 238 0"
+			initlabel="bg.storeIRmessage" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="sendIRmessage" kind="data" color="0 238 0"
+			initlabel="bg.sendIRmessage" editable-label="no">
+		</BlockGenus>
+		<BlockGenus name="DataReceive" kind="data" color="64 224 208" initlabel="bg.DataReceive" editable-label="no"></BlockGenus>
+		
+
+	</BlockGenuses>
+
+	<BlockFamilies>
+		<BlockFamily>
+			<FamilyMember>digital-high</FamilyMember>
+			<FamilyMember>digital-low</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>and</FamilyMember>
+			<FamilyMember>or</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>true</FamilyMember>
+			<FamilyMember>false</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>addition</FamilyMember>
+			<FamilyMember>subtraction</FamilyMember>
+			<FamilyMember>multiplication</FamilyMember>
+			<FamilyMember>division</FamilyMember>
+			<FamilyMember>modulo</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>min</FamilyMember>
+			<FamilyMember>max</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>greater</FamilyMember>
+			<FamilyMember>less</FamilyMember>
+			<FamilyMember>equal</FamilyMember>
+			<FamilyMember>greater_equal</FamilyMember>
+			<FamilyMember>less_equal</FamilyMember>
+			<FamilyMember>not_equal</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>equal_digital</FamilyMember>
+			<FamilyMember>not_equal_digital</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>equal_poly</FamilyMember>
+			<FamilyMember>not_equal_poly</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>string_greater</FamilyMember>
+			<FamilyMember>string_less</FamilyMember>
+			<FamilyMember>string_equal</FamilyMember>
+			<FamilyMember>string_greater_equal</FamilyMember>
+			<FamilyMember>string_less_equal</FamilyMember>
+			<FamilyMember>string_not_equal</FamilyMember>
+			<FamilyMember>string_equals</FamilyMember>
+			<FamilyMember>string_equalsIgnoreCase</FamilyMember>
+			<FamilyMember>string_compareTo</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>equal_string</FamilyMember>
+			<FamilyMember>not_equal_string</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>sin</FamilyMember>
+			<FamilyMember>cos</FamilyMember>
+			<FamilyMember>tan</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>code_head</FamilyMember>
+			<FamilyMember>code_setup</FamilyMember>
+			<FamilyMember>code_loop</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>digital-on</FamilyMember>
+			<FamilyMember>digital-off</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>LCD_I2C_Sainsmart_20by4</FamilyMember>
+			<FamilyMember>LCD_I2C_Sainsmart_16by2</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>LCD_command_clear</FamilyMember>
+			<FamilyMember>LCD_command_home</FamilyMember>
+			<FamilyMember>LCD_command_lightOff</FamilyMember>
+			<FamilyMember>LCD_command_lightOn</FamilyMember>
+			<FamilyMember>LCD_command_cursorOn</FamilyMember>
+			<FamilyMember>LCD_command_cursorOff</FamilyMember>
+			<FamilyMember>LCD_command_blinkOn</FamilyMember>
+			<FamilyMember>LCD_command_blinkOff</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>servo_default</FamilyMember>
+			<FamilyMember>servo_sg90</FamilyMember>
+			<FamilyMember>servo_mg996r</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>df_joystick_module_x</FamilyMember>
+			<FamilyMember>df_joystick_module_y</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>df_mma7260_x</FamilyMember>
+			<FamilyMember>df_mma7260_y</FamilyMember>
+			<FamilyMember>df_mma7260_z</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Tinker_I0</FamilyMember>
+			<FamilyMember>Tinker_I1</FamilyMember>
+			<FamilyMember>Tinker_I2</FamilyMember>
+			<FamilyMember>Tinker_I3</FamilyMember>
+			<FamilyMember>Tinker_I4</FamilyMember>
+			<FamilyMember>Tinker_I5</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Tinker_O0</FamilyMember>
+			<FamilyMember>Tinker_O1</FamilyMember>
+			<FamilyMember>Tinker_O2</FamilyMember>
+			<FamilyMember>Tinker_O3</FamilyMember>
+			<FamilyMember>Tinker_O4</FamilyMember>
+			<FamilyMember>Tinker_O5</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>panda_i1</FamilyMember>
+			<FamilyMember>panda_i2</FamilyMember>
+			<FamilyMember>panda_i3</FamilyMember>
+			<FamilyMember>panda_i4</FamilyMember>
+			<FamilyMember>panda_i5</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>panda_o1</FamilyMember>
+			<FamilyMember>panda_o2</FamilyMember>
+			<FamilyMember>panda_o3</FamilyMember>
+			<FamilyMember>panda_o4</FamilyMember>
+			<FamilyMember>panda_o5</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ada_dc_motor_fwd</FamilyMember>
+			<FamilyMember>ada_dc_motor_bwd</FamilyMember>
+			<FamilyMember>ada_dc_motor_release</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ada_neopixel_NEO_GRB</FamilyMember>
+			<FamilyMember>ada_neopixel_NEO_RGB</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ada_neopixel_NEO_KHZ400</FamilyMember>
+			<FamilyMember>ada_neopixel_NEO_KHZ800</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ada_neopixel_pixel_colorRGB</FamilyMember>
+			<FamilyMember>ada_neopixel_pixel_colorGRB</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>me_port_1</FamilyMember>
+			<FamilyMember>me_port_2</FamilyMember>
+			<FamilyMember>me_port_3</FamilyMember>
+			<FamilyMember>me_port_4</FamilyMember>
+			<FamilyMember>me_port_5</FamilyMember>
+			<FamilyMember>me_port_6</FamilyMember>
+			<FamilyMember>me_port_7</FamilyMember>
+			<FamilyMember>me_port_8</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>me_motor_1</FamilyMember>
+			<FamilyMember>me_motor_2</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>me_shutter_1</FamilyMember>
+			<FamilyMember>me_shutter_2</FamilyMember>
+			<FamilyMember>me_shutter_3</FamilyMember>
+			<FamilyMember>me_shutter_4</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>scoop_event_low</FamilyMember>
+			<FamilyMember>scoop_event_high</FamilyMember>
+			<FamilyMember>scoop_event_falling</FamilyMember>
+			<FamilyMember>scoop_event_rising</FamilyMember>
+			<FamilyMember>scoop_event_change</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>led_mode_flash</FamilyMember>
+			<FamilyMember>led_mode_fade</FamilyMember>
+		</BlockFamily>
+
+		<BlockFamily>
+			<FamilyMember>trigger_equal</FamilyMember>
+			<FamilyMember>trigger_greater</FamilyMember>
+			<FamilyMember>trigger_less</FamilyMember>
+		</BlockFamily>
+
+		<BlockFamily>
+			<FamilyMember>player_mode_random</FamilyMember>
+			<FamilyMember>player_mode_single</FamilyMember>
+		</BlockFamily>
+
+		<BlockFamily>
+			<FamilyMember>output_mode_high</FamilyMember>
+			<FamilyMember>output_mode_low</FamilyMember>
+			<FamilyMember>output_mode_highpulse</FamilyMember>
+			<FamilyMember>output_mode_lowpulse</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_right</FamilyMember>
+			<FamilyMember>DuinoEDU_straight</FamilyMember>
+			<FamilyMember>DuinoEDU_left</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Driver_I2C_Forward</FamilyMember>
+			<FamilyMember>DuinoEDU_Driver_I2C_Back</FamilyMember>
+			<FamilyMember>DuinoEDU_Driver_I2C_Pivoter</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_shildbot_Forward</FamilyMember>
+			<FamilyMember>DuinoEDU_shildbot_Back</FamilyMember>
+			<FamilyMember>DuinoEDU_shildbot_Pivoter</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_S1</FamilyMember>
+			<FamilyMember>DuinoEDU_S2</FamilyMember>
+			<FamilyMember>DuinoEDU_S3</FamilyMember>
+			<FamilyMember>DuinoEDU_S4</FamilyMember>
+			<FamilyMember>DuinoEDU_S5</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Driver_I2C_Speed_A_Motor</FamilyMember>
+			<FamilyMember>DuinoEDU_Driver_I2C_Speed_B_Motor</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Aix_Acc_mesurerX</FamilyMember>
+			<FamilyMember>DuinoEDU_Aix_Acc_mesurerY</FamilyMember>
+			<FamilyMember>DuinoEDU_Aix_Acc_mesurerZ</FamilyMember>
+			<FamilyMember>DuinoEDU_Aix_Acc_mesurerXYZ</FamilyMember>
+			<FamilyMember>DuinoEDU_Aix_Acc_mesurerVariation</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_humiPro</FamilyMember>
+			<FamilyMember>DuinoEDU_tempPro</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_temp</FamilyMember>
+			<FamilyMember>DuinoEDU_humi</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_On_digit1</FamilyMember>
+			<FamilyMember>DuinoEDU_On_digit2</FamilyMember>
+			<FamilyMember>DuinoEDU_On_digit3</FamilyMember>
+			<FamilyMember>DuinoEDU_On_digit4</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_setSerialInfosOn</FamilyMember>
+			<FamilyMember>DuinoEDU_setSerialInfosOff</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Mouse_Xmove</FamilyMember>
+			<FamilyMember>DuinoEDU_Mouse_Ymove</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_equal</FamilyMember>
+			<FamilyMember>DuinoEDU_not_equal</FamilyMember>
+			<FamilyMember>DuinoEDU_greater</FamilyMember>
+			<FamilyMember>DuinoEDU_less</FamilyMember>
+			<FamilyMember>DuinoEDU_greater_equal</FamilyMember>
+			<FamilyMember>DuinoEDU_less_equal</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Rfid_Write</FamilyMember>
+			<FamilyMember>DuinoEDU_Rfid_Ram_List</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_neopixel_pixel_colorGRB</FamilyMember>
+			<FamilyMember>DuinoEDU_neopixel_pixel_colorRGB</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DDRA</FamilyMember>
+			<FamilyMember>DDRB</FamilyMember>
+			<FamilyMember>DDRC</FamilyMember>
+			<FamilyMember>DDRD</FamilyMember>
+			<FamilyMember>DDRH</FamilyMember>
+			<FamilyMember>DDRL</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>PORTA</FamilyMember>
+			<FamilyMember>PORTB</FamilyMember>
+			<FamilyMember>PORTC</FamilyMember>
+			<FamilyMember>PORTD</FamilyMember>
+			<FamilyMember>PORTH</FamilyMember>
+			<FamilyMember>PORTL</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>PORTA2</FamilyMember>
+			<FamilyMember>PORTB2</FamilyMember>
+			<FamilyMember>PORTC2</FamilyMember>
+			<FamilyMember>PORTD2</FamilyMember>
+			<FamilyMember>PORTH2</FamilyMember>
+			<FamilyMember>PORTL2</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>LEVEL1</FamilyMember>
+			<FamilyMember>LEVEL0</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>PINA</FamilyMember>
+			<FamilyMember>PINB</FamilyMember>
+			<FamilyMember>PINC</FamilyMember>
+			<FamilyMember>PIND</FamilyMember>
+			<FamilyMember>PINH</FamilyMember>
+			<FamilyMember>PINL</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Volts</FamilyMember>
+			<FamilyMember>DuinoEDU_VALEURS_BRUTES</FamilyMember>
+			<FamilyMember>DuinoEDU_CM</FamilyMember>
+			<FamilyMember>DuinoEDU_DEGRES</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Nunchuck_BoutonC</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_BoutonZ</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_JoystickX</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_JoystickY</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_AccelerationX</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_AccelerationY</FamilyMember>
+			<FamilyMember>DuinoEDU_Nunchuck_AccelerationZ</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Barometer_Temperature</FamilyMember>
+			<FamilyMember>DuinoEDU_Barometer_Pression</FamilyMember>
+			<FamilyMember>DuinoEDU_Barometer_Altitude</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_D2</FamilyMember>
+			<FamilyMember>DuinoEDU_D3</FamilyMember>
+			<FamilyMember>DuinoEDU_D4</FamilyMember>
+			<FamilyMember>DuinoEDU_D5</FamilyMember>
+			<FamilyMember>DuinoEDU_D6</FamilyMember>
+			<FamilyMember>DuinoEDU_D7</FamilyMember>
+			<FamilyMember>DuinoEDU_D8</FamilyMember>
+			<FamilyMember>DuinoEDU_D9</FamilyMember>
+			<FamilyMember>DuinoEDU_D10</FamilyMember>
+			<FamilyMember>DuinoEDU_D11</FamilyMember>
+			<FamilyMember>DuinoEDU_D12</FamilyMember>
+			<FamilyMember>DuinoEDU_D13</FamilyMember>
+			<FamilyMember>DuinoEDU_D14</FamilyMember>
+			<FamilyMember>DuinoEDU_D15</FamilyMember>
+			<FamilyMember>DuinoEDU_D16</FamilyMember>
+			<FamilyMember>DuinoEDU_D17</FamilyMember>
+			<FamilyMember>DuinoEDU_D18</FamilyMember>
+			<FamilyMember>DuinoEDU_D19</FamilyMember>
+			<FamilyMember>DuinoEDU_D20</FamilyMember>
+			<FamilyMember>DuinoEDU_D21</FamilyMember>
+			<FamilyMember>DuinoEDU_A0</FamilyMember>
+			<FamilyMember>DuinoEDU_A1</FamilyMember>
+			<FamilyMember>DuinoEDU_A2</FamilyMember>
+			<FamilyMember>DuinoEDU_A3</FamilyMember>
+			<FamilyMember>DuinoEDU_A4</FamilyMember>
+			<FamilyMember>DuinoEDU_A5</FamilyMember>
+			<FamilyMember>DuinoEDU_A6</FamilyMember>
+			<FamilyMember>DuinoEDU_A7</FamilyMember>
+			<FamilyMember>DuinoEDU_A8</FamilyMember>
+			<FamilyMember>DuinoEDU_A9</FamilyMember>
+			<FamilyMember>DuinoEDU_A10</FamilyMember>
+			<FamilyMember>DuinoEDU_A11</FamilyMember>
+			<FamilyMember>DuinoEDU_A12</FamilyMember>
+			<FamilyMember>DuinoEDU_A13</FamilyMember>
+			<FamilyMember>DuinoEDU_A14</FamilyMember>
+			<FamilyMember>DuinoEDU_A15</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_A0</FamilyMember>
+			<FamilyMember>DuinoEDU_A1</FamilyMember>
+			<FamilyMember>DuinoEDU_A2</FamilyMember>
+			<FamilyMember>DuinoEDU_A3</FamilyMember>
+			<FamilyMember>DuinoEDU_A4</FamilyMember>
+			<FamilyMember>DuinoEDU_A5</FamilyMember>
+			<FamilyMember>DuinoEDU_A6</FamilyMember>
+			<FamilyMember>DuinoEDU_A7</FamilyMember>
+			<FamilyMember>DuinoEDU_A8</FamilyMember>
+			<FamilyMember>DuinoEDU_A9</FamilyMember>
+			<FamilyMember>DuinoEDU_A10</FamilyMember>
+			<FamilyMember>DuinoEDU_A11</FamilyMember>
+			<FamilyMember>DuinoEDU_A12</FamilyMember>
+			<FamilyMember>DuinoEDU_A13</FamilyMember>
+			<FamilyMember>DuinoEDU_A14</FamilyMember>
+			<FamilyMember>DuinoEDU_A15</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_IRREMOTE_MEMORISER_TOUCHE</FamilyMember>
+			<FamilyMember>DuinoEDU_IRREMOTE_NE_PAS_MEMORISER</FamilyMember>
+			<FamilyMember>DuinoEDU_IRREMOTE_MEMORISER_200_MS</FamilyMember>
+			<FamilyMember>DuinoEDU_IRREMOTE_MEMORISER_2000_MS</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_hand_positionX</FamilyMember>
+			<FamilyMember>DuinoEDU_hand_positionY</FamilyMember>
+			<FamilyMember>DuinoEDU_hand_positionZ</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_handRotX</FamilyMember>
+			<FamilyMember>DuinoEDU_handRotY</FamilyMember>
+			<FamilyMember>DuinoEDU_handRotZ</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_angle_pouce</FamilyMember>
+			<FamilyMember>DuinoEDU_angle_index</FamilyMember>
+			<FamilyMember>DuinoEDU_angle_majeur</FamilyMember>
+			<FamilyMember>DuinoEDU_angle_annulaire</FamilyMember>
+			<FamilyMember>DuinoEDU_angle_auriculaire</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_RTC_Day</FamilyMember>
+			<FamilyMember>DuinoEDU_RTC_Month</FamilyMember>
+			<FamilyMember>DuinoEDU_RTC_Year</FamilyMember>
+			<FamilyMember>DuinoEDU_RTC_Hour</FamilyMember>
+			<FamilyMember>DuinoEDU_RTC_Minute</FamilyMember>
+			<FamilyMember>DuinoEDU_RTC_Second</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_code_head</FamilyMember>
+			<FamilyMember>DuinoEDU_code_</FamilyMember>
+			<FamilyMember>DuinoEDU_code_loop</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Motor_shield_Forward</FamilyMember>
+			<FamilyMember>DuinoEDU_Motor_shield_Back</FamilyMember>
+			<FamilyMember>DuinoEDU_Motor_shield_Pivoter</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Uno23</FamilyMember>
+			<FamilyMember>DuinoEDU_Uno45</FamilyMember>
+			<FamilyMember>DuinoEDU_Uno67</FamilyMember>
+			<FamilyMember>DuinoEDU_Uno89</FamilyMember>
+			<FamilyMember>DuinoEDU_Mega1</FamilyMember>
+			<FamilyMember>DuinoEDU_Mega2</FamilyMember>
+			<FamilyMember>DuinoEDU_Mega3</FamilyMember>
+			<FamilyMember>DuinoEDU_Mega4</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Gps_LatitudeNbr</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_LongitudeNbr</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_LatitudeDirection</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_LongitudeDirection</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Gps_LatitudeGoogleMaps</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_LongitudeGoogleMaps</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Gps_Day</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Month</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Year</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Hour</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Minute</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Seconde</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Milliseconde</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Gps_Speed</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_Angle</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_altitude</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Gps_ActiverInterruption</FamilyMember>
+			<FamilyMember>DuinoEDU_Gps_DesactiverInterruption</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>DuinoEDU_Information1</FamilyMember>
+			<FamilyMember>DuinoEDU_Information2</FamilyMember>
+			<FamilyMember>DuinoEDU_Information3</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>EDUGPS_100MLHZ</FamilyMember>
+			<FamilyMember>EDUGPS_200MLHZ</FamilyMember>
+			<FamilyMember>EDUGPS_1HZ</FamilyMember>
+			<FamilyMember>EDUGPS_5HZ</FamilyMember>
+			<FamilyMember>EDUGPS_10HZ</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_AccelerationX</FamilyMember>
+			<FamilyMember>Esplora_AccelerationY</FamilyMember>
+			<FamilyMember>Esplora_AccelerationZ</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_JoystickX</FamilyMember>
+			<FamilyMember>Esplora_JoystickY</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_DEGREES_C</FamilyMember>
+			<FamilyMember>Esplora_DEGREES_F</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_DOWN</FamilyMember>
+			<FamilyMember>Esplora_LEFT</FamilyMember>
+			<FamilyMember>Esplora_UP</FamilyMember>
+			<FamilyMember>Esplora_RIGHT</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_LEFT2</FamilyMember>
+			<FamilyMember>Esplora_RIGHT2</FamilyMember>
+			<FamilyMember>Esplora_MIDDLE</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_Mouse_Click</FamilyMember>
+			<FamilyMember>Esplora_Mouse_Press</FamilyMember>
+			<FamilyMember>Esplora_Mouse_Release</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_Keyboard_Click</FamilyMember>
+			<FamilyMember>Esplora_Keyboard_Press</FamilyMember>
+			<FamilyMember>Esplora_Keyboard_Release</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_TFT_Height</FamilyMember>
+			<FamilyMember>Esplora_TFT_Width</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Esplora_Image_Height</FamilyMember>
+			<FamilyMember>Esplora_Image_Width</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ESPLORA_OUTA</FamilyMember>
+			<FamilyMember>ESPLORA_OUTB</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>ESPLORA_INA</FamilyMember>
+			<FamilyMember>ESPLORA_INB</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>GROVE_CS</FamilyMember>
+			<FamilyMember>DUPONT_CS</FamilyMember>
+			<FamilyMember>ESPLORA_CS</FamilyMember>
+		</BlockFamily>
+		<BlockFamily>
+			<FamilyMember>Midi_C</FamilyMember>
+			<FamilyMember>Midi_CS</FamilyMember>
+			<FamilyMember>Midi_D</FamilyMember>
+			<FamilyMember>Midi_DS</FamilyMember>
+			<FamilyMember>Midi_E</FamilyMember>
+			<FamilyMember>Midi_F</FamilyMember>
+			<FamilyMember>Midi_FS</FamilyMember>
+			<FamilyMember>Midi_G</FamilyMember>
+			<FamilyMember>Midi_GS</FamilyMember>
+			<FamilyMember>Midi_A</FamilyMember>
+			<FamilyMember>Midi_AS</FamilyMember>
+			<FamilyMember>Midi_B</FamilyMember>
+		</BlockFamily>
+
+	</BlockFamilies>
+
+	<BlockDrawerSets>
+		<BlockDrawerSet name="factory" type="bar" location="southwest"
+			window-per-drawer="no" drawer-draggable="no">
+
+			<BlockDrawer button-color="29 152 155" name="bd.pins"
+				type="factory">
+				<BlockGenusMember>pin-read-digital</BlockGenusMember>
+				<BlockGenusMember>pin-read-analog</BlockGenusMember>
+				<BlockGenusMember>pin-write-digital</BlockGenusMember>
+				<BlockGenusMember>pin-write-analog</BlockGenusMember>
+				<BlockGenusMember>pin-toggle</BlockGenusMember>
+				<BlockGenusMember>df_servo</BlockGenusMember>
+				<BlockGenusMember>df_360_degree_rotation_motor</BlockGenusMember>
+				<BlockGenusMember>ultrasonic</BlockGenusMember>
+				<BlockGenusMember>df_dht11_temperature</BlockGenusMember>
+				<BlockGenusMember>df_dht11_humidity</BlockGenusMember>
+				<BlockGenusMember>tone</BlockGenusMember>
+				<BlockGenusMember>tone_time</BlockGenusMember>
+				<BlockGenusMember>no_tone</BlockGenusMember>
+				<BlockGenusMember>DDRA</BlockGenusMember>
+				<BlockGenusMember>PORTA</BlockGenusMember>
+				<BlockGenusMember>PORT_FIX</BlockGenusMember>
+				<BlockGenusMember>PINA</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="255 163 82" name="bd.logic"
+				type="factory">
+				<BlockGenusMember>greater</BlockGenusMember>
+				<BlockGenusMember>less</BlockGenusMember>
+				<BlockGenusMember>equal</BlockGenusMember>
+				<BlockGenusMember>greater_equal</BlockGenusMember>
+				<BlockGenusMember>less_equal</BlockGenusMember>
+				<BlockGenusMember>not_equal</BlockGenusMember>
+				<BlockGenusMember>equal_digital</BlockGenusMember>
+				<BlockGenusMember>not_equal_digital</BlockGenusMember>
+				<BlockGenusMember>equal_poly</BlockGenusMember>
+				<BlockGenusMember>not_equal_poly</BlockGenusMember>
+				<BlockGenusMember>equal_string</BlockGenusMember>
+				<BlockGenusMember>not_equal_string</BlockGenusMember>
+				<BlockGenusMember>and</BlockGenusMember>
+				<BlockGenusMember>or</BlockGenusMember>
+				<BlockGenusMember>not</BlockGenusMember>
+				<BlockGenusMember>string_equal</BlockGenusMember>
+				<BlockGenusMember>string_empty</BlockGenusMember>
+				<BlockGenusMember>string_toInt</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="114 147 71" name="bd.operators"
+				type="factory">
+				<BlockGenusMember>addition</BlockGenusMember>
+				<BlockGenusMember>subtraction</BlockGenusMember>
+				<BlockGenusMember>multiplication</BlockGenusMember>
+				<BlockGenusMember>division</BlockGenusMember>
+				<BlockGenusMember>modulo</BlockGenusMember>
+				<BlockGenusMember>abs</BlockGenusMember>
+				<BlockGenusMember>pow</BlockGenusMember>
+				<BlockGenusMember>sqrt</BlockGenusMember>
+				<BlockGenusMember>sin</BlockGenusMember>
+				<BlockGenusMember>cos</BlockGenusMember>
+				<BlockGenusMember>tan</BlockGenusMember>
+				<BlockGenusMember>random_range</BlockGenusMember>
+				<BlockGenusMember>map</BlockGenusMember>
+				<BlockGenusMember>toint</BlockGenusMember>
+				<BlockGenusMember>constrain</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="232 156 149" name="bd.number"
+				type="factory">
+				<BlockGenusMember>number</BlockGenusMember>
+				<BlockGenusMember>setter_variable_number</BlockGenusMember>
+				<BlockGenusMember>variable_number</BlockGenusMember>
+				<BlockGenusMember>setter_variable_number_unsigned_long</BlockGenusMember>
+				<BlockGenusMember>variable_number_unsigned_long</BlockGenusMember>
+				<BlockGenusMember>setter_variable_digital</BlockGenusMember>
+				<BlockGenusMember>variable_digital</BlockGenusMember>
+				<BlockGenusMember>digital-low</BlockGenusMember>
+				<BlockGenusMember>digital-high</BlockGenusMember>
+				<BlockGenusMember>true</BlockGenusMember>
+				<BlockGenusMember>false</BlockGenusMember>
+				<BlockGenusMember>setter_variable_number_double</BlockGenusMember>
+				<BlockGenusMember>variable_number_double</BlockGenusMember>
+				<BlockGenusMember>number_double</BlockGenusMember>
+				<BlockGenusMember>setter_variable_char</BlockGenusMember>
+				<BlockGenusMember>variable_poly</BlockGenusMember>
+				<BlockGenusMember>char</BlockGenusMember>
+				<BlockGenusMember>setter_variable_String</BlockGenusMember>
+				<BlockGenusMember>variable_String</BlockGenusMember>
+				<BlockGenusMember>message</BlockGenusMember>
+				<BlockGenusMember>create_variable_vector</BlockGenusMember>
+				<BlockGenusMember>variable_vector</BlockGenusMember>
+				<BlockGenusMember>setter_variable_vector</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="205 133 63" name="bd.utilities"
+				type="factory">
+				<BlockGenusMember>servo_default</BlockGenusMember>
+				<BlockGenusMember>ultrasonic</BlockGenusMember>
+				<BlockGenusMember>LCD_I2C_Sainsmart_20by4</BlockGenusMember>
+				<BlockGenusMember>LCD_command_lightOff</BlockGenusMember>
+				<BlockGenusMember>LCD_PLL_Sainsmart_16by2</BlockGenusMember>
+				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
+				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="255 255 255" name="bd.communication"
+				type="factory">
+				<BlockGenusMember>serial_available</BlockGenusMember>
+				<BlockGenusMember>serial_available2</BlockGenusMember>
+				<BlockGenusMember>serial_read</BlockGenusMember>
+				<BlockGenusMember>serial_parseInt</BlockGenusMember>
+				<BlockGenusMember>serial_write</BlockGenusMember>
+				<BlockGenusMember>serial_print</BlockGenusMember>
+				<BlockGenusMember>glue_sn</BlockGenusMember>
+				<BlockGenusMember>glue_sb</BlockGenusMember>
+				<BlockGenusMember>glue_poly</BlockGenusMember>
+				<BlockGenusMember>ir_setport</BlockGenusMember>
+				<BlockGenusMember>ir_getcode</BlockGenusMember>
+				<BlockGenusMember>wire_write</BlockGenusMember>
+				<BlockGenusMember>wire_read</BlockGenusMember>
+				<BlockGenusMember>wire_isread</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_Read</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_Slider</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_switch</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_pause</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_Title</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Guino_column</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_hand_positionX</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_handRotX</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_angle_pouce</BlockGenusMember>
+				<BlockGenusMember>Serialplus_send_variable_number</BlockGenusMember>
+				<BlockGenusMember>Serialplus_send_variable_digital</BlockGenusMember>
+				<BlockGenusMember>Serialplus_receive_number</BlockGenusMember>
+				<BlockGenusMember>Serialplus_receive_digital</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="26 97 218" name="bd.scoop">
+				<BlockGenusMember>scoop_task</BlockGenusMember>
+				<BlockGenusMember>scoop_loop</BlockGenusMember>
+				<BlockGenusMember>scoop_sleep</BlockGenusMember>
+				<BlockGenusMember>scoop_pin_event</BlockGenusMember>
+				<BlockGenusMember>scoop_event_low</BlockGenusMember>
+				<BlockGenusMember>scoop_event_high</BlockGenusMember>
+				<BlockGenusMember>scoop_event_falling</BlockGenusMember>
+				<BlockGenusMember>scoop_event_rising</BlockGenusMember>
+				<BlockGenusMember>scoop_event_change</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="0 50 45" name="bd.storage"
+				type="factory">
+				<BlockGenusMember>eeprom_read_int</BlockGenusMember>
+				<BlockGenusMember>eeprom_write_int</BlockGenusMember>
+				<BlockGenusMember>eeprom_read_long</BlockGenusMember>
+				<BlockGenusMember>eeprom_write_long</BlockGenusMember>
+				<BlockGenusMember>eeprom_read</BlockGenusMember>
+				<BlockGenusMember>eeprom_write</BlockGenusMember>
+				<BlockGenusMember>sd_write2</BlockGenusMember>
+				<BlockGenusMember>MaSD_Connect</BlockGenusMember>
+				<BlockGenusMember>MaSD_file</BlockGenusMember>
+				<BlockGenusMember>MaSD_Write</BlockGenusMember>
+				<BlockGenusMember>MaSD_NewLine</BlockGenusMember>
+				<BlockGenusMember>MaSD_separator</BlockGenusMember>
+				<!-- <BlockGenusMember>sd_write</BlockGenusMember> -->
+				<!-- <BlockGenusMember>sd_write_number</BlockGenusMember> -->
+				<!-- <BlockGenusMember>sd_write_number_int</BlockGenusMember> -->
+			</BlockDrawer>
+			<BlockDrawer button-color="169 148 212" name="bd.network"
+				type="factory">
+				<BlockGenusMember>bleshield</BlockGenusMember>
+				<BlockGenusMember>bleshield_available</BlockGenusMember>
+				<BlockGenusMember>bleshield_read_poly</BlockGenusMember>
+				<BlockGenusMember>bleshield_compare</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="120 120 120" name="bd.especial"
+				type="factory">
+				<BlockGenusMember>code_head</BlockGenusMember>
+				<BlockGenusMember>code_setup</BlockGenusMember>
+				<BlockGenusMember>code_loop</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_code_head</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_code_setup</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_code_loop</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="13 152 164" name="bd.tinkerkit"
+				type="factory">
+				<BlockGenusMember>Tinker_LED</BlockGenusMember>
+				<BlockGenusMember>Tinker_LED_pwm</BlockGenusMember>
+				<BlockGenusMember>Tinker_Button</BlockGenusMember>
+				<BlockGenusMember>Tinker_Accmeter</BlockGenusMember>
+				<BlockGenusMember>Tinker_Hall</BlockGenusMember>
+				<BlockGenusMember>Tinker_LDR</BlockGenusMember>
+				<BlockGenusMember>Tinker_LinearPotentiometer</BlockGenusMember>
+				<BlockGenusMember>Tinker_RotaryPotentiometer</BlockGenusMember>
+				<BlockGenusMember>Tinker_Thermistor</BlockGenusMember>
+				<BlockGenusMember>Tinker_Touch</BlockGenusMember>
+				<BlockGenusMember>Tinker_Tilt</BlockGenusMember>
+				<BlockGenusMember>Tinker_Relay</BlockGenusMember>
+				<BlockGenusMember>Tinker_Mosfet</BlockGenusMember>
+				<BlockGenusMember>Tinker_Mosfet_pwm</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="255 102 0" name="bd.dfrobot"
+				type="factory">
+				<BlockGenusMember>df_led</BlockGenusMember>
+				<BlockGenusMember>df_led_pwm</BlockGenusMember>
+				<BlockGenusMember>df_digital_push_button</BlockGenusMember>
+				<BlockGenusMember>df_digital_viberation_sensor</BlockGenusMember>
+				<BlockGenusMember>df_analog_rotation_sensor_v1</BlockGenusMember>
+				<BlockGenusMember>df_analog_rotation_sensor_v2</BlockGenusMember>
+				<BlockGenusMember>df_servo</BlockGenusMember>
+				<BlockGenusMember>df_360_degree_rotation_motor</BlockGenusMember>
+				<BlockGenusMember>df_analog_sound_sensor</BlockGenusMember>
+				<BlockGenusMember>df_analog_volume_sensor</BlockGenusMember>
+				<BlockGenusMember>df_relay</BlockGenusMember>
+				<BlockGenusMember>df_analog_ambient_light_sensor</BlockGenusMember>
+				<BlockGenusMember>df_analog_grayscale_sensor</BlockGenusMember>
+				<BlockGenusMember>df_buzzer</BlockGenusMember>
+				<BlockGenusMember>df_buzzer_tone</BlockGenusMember>
+				<BlockGenusMember>df_buzzer_tone_delay</BlockGenusMember>
+				<BlockGenusMember>df_capacitive_touch_sensor</BlockGenusMember>
+				<BlockGenusMember>df_digital_tilt_sensor</BlockGenusMember>
+				<BlockGenusMember>df_digital_infrared_motion_sensor</BlockGenusMember>
+				<BlockGenusMember>df_digital_ir_receiver_module</BlockGenusMember>
+				<BlockGenusMember>df_adjustable_infrared_sensor_switch</BlockGenusMember>
+				<BlockGenusMember>df_line_tracking_sensor</BlockGenusMember>
+				<BlockGenusMember>df_joystick_module_button</BlockGenusMember>
+				<BlockGenusMember>df_digital_magnetic_sensor</BlockGenusMember>
+				<BlockGenusMember>df_pizeo_disk_vibration_sensor</BlockGenusMember>
+				<BlockGenusMember>df_flame_sensor</BlockGenusMember>
+				<BlockGenusMember>df_temperature_sensor</BlockGenusMember>
+				<BlockGenusMember>df_joystick_module_x</BlockGenusMember>
+				<BlockGenusMember>df_joystick_module_y</BlockGenusMember>
+				<BlockGenusMember>df_analog_mma7361_x</BlockGenusMember>
+				<BlockGenusMember>df_analog_mma7361_y</BlockGenusMember>
+				<BlockGenusMember>df_analog_mma7361_z</BlockGenusMember>
+				<BlockGenusMember>df_mma7260_x</BlockGenusMember>
+				<BlockGenusMember>df_mma7260_y</BlockGenusMember>
+				<BlockGenusMember>df_mma7260_z</BlockGenusMember>
+				<BlockGenusMember>df_analog_gp2y0a21</BlockGenusMember>
+				<BlockGenusMember>df_analog_moisture</BlockGenusMember>
+				<BlockGenusMember>df_analog_gas_sensor</BlockGenusMember>
+				<BlockGenusMember>df_analog_co_sensor</BlockGenusMember>
+				<BlockGenusMember>df_analog_voltage_divider</BlockGenusMember>
+				<BlockGenusMember>df_piranha_led</BlockGenusMember>
+				<BlockGenusMember>df_piranha_led_pwm</BlockGenusMember>
+				<BlockGenusMember>panda_i1</BlockGenusMember>
+				<BlockGenusMember>panda_o1</BlockGenusMember>
+				<BlockGenusMember>df_lcd_keypad</BlockGenusMember>
+				<BlockGenusMember>bluno_println</BlockGenusMember>
+				<BlockGenusMember>bluno_println_number</BlockGenusMember>
+				<BlockGenusMember>bluno_println_clear</BlockGenusMember>
+				<BlockGenusMember>df_romeo_motors</BlockGenusMember>
+				<BlockGenusMember>df_romeo_motor</BlockGenusMember>
+				<BlockGenusMember>df_romeo_motor_stop</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="0 255 0" name="bd.seeedstudio">
+				<BlockGenusMember>seeed_led</BlockGenusMember>
+				<BlockGenusMember>seeed_button</BlockGenusMember>
+				<BlockGenusMember>seeed_switch</BlockGenusMember>
+				<BlockGenusMember>seeed_angle_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_light_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_temp_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_sound_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_line_finder</BlockGenusMember>
+				<BlockGenusMember>seeed_pir_motion_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_tilt_switch</BlockGenusMember>
+				<BlockGenusMember>seeed_water_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_moisture_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_touch_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_mag_switch</BlockGenusMember>
+				<BlockGenusMember>seeed_ir_dist_int</BlockGenusMember>
+				<BlockGenusMember>seeed_ir_proximity_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_air_quality_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_vib</BlockGenusMember>
+				<BlockGenusMember>seeed_vib_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_relay</BlockGenusMember>
+				<BlockGenusMember>seeed_dry_relay</BlockGenusMember>
+				<BlockGenusMember>seeed_2coil_relay</BlockGenusMember>
+				<BlockGenusMember>seeed_solid_relay</BlockGenusMember>
+				<BlockGenusMember>seeed_joystick</BlockGenusMember>
+				<BlockGenusMember>seeed_joystick_button</BlockGenusMember>
+				<BlockGenusMember>seeed_diff_amp</BlockGenusMember>
+				<BlockGenusMember>seeed_ir_temp_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_electricity_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_voltage_divider</BlockGenusMember>
+				<BlockGenusMember>seeed_flame_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_ir_refl_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_heart_rate_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_chest_heart_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_circle_led</BlockGenusMember>
+				<BlockGenusMember>seeed_led_strip</BlockGenusMember>
+				<BlockGenusMember>seeed_var_led</BlockGenusMember>
+				<BlockGenusMember>seeed_uv_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_single_gyro</BlockGenusMember>
+				<BlockGenusMember>seeed_mq9_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_mp3_sensor</BlockGenusMember>
+				<BlockGenusMember>seeed_o2_sensor</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="20 206 20" name="bd.DuinoEDU">
+				<BlockGenusMember>DuinoEDU_Led</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Servo_Plus</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Ultrasonic</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_LCD_I2C_RGB2</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_LCD_I2C_Backlight</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_LCD_I2C_RGB_Clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_infrared</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_infrared_compare</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_temp</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_humiPro</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Barometer_Pression</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Led_Bar</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Oled_I2C</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Oled_Clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Keypad_12_Button</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Keypad_Post</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Keypad_Pwd</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Digital_Tube</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Digital_Tube_Ecrire</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Display_Digital_Tube</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Digital_Clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Driver_I2C_Speed_A_Motor</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Driver_I2C_Forward</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Driver_I2C_Stop</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_shildbot_Speed_Motor</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_shildbot_Forward</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_shildbot_Stop</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_shildbot_Read</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Motor_shield_Speed_Motor</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Motor_shield_Forward</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Motor_shield_Stop</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Motor_shield_Drift_Motor</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Aix_Acc_mesurerX</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Partie_Emetteur</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Partie_Recepteur</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Rfid_Write</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Rfid_Test</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Rfid_Read</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Rfid_Clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_neopixel_init</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_neopixel_pixel_colorRGB</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_neopixel_show</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_neopixel_Brightness</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_neopixel_Clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_stepper_step</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_stepper_setSpeed</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_matrice_write</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_matrice_Brightness</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_matrice_clear</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_MP3_Player</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_MP3_Pause</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_RTC_Mem</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_RTC_Day</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_Init</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_Synchronise</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_LatitudeNbr</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_LatitudeGoogleMaps</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_Day</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Gps_Speed</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Mouse_Xmove</BlockGenusMember>
+				<BlockGenusMember>keyboard_post</BlockGenusMember>
+				<BlockGenusMember>keyboard_compare</BlockGenusMember>
+				<BlockGenusMember>DuinoEDU_Nunchuck_BoutonC</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="20 206 20" name="bd.Esplora">
+				<BlockGenusMember>Esplora_Led</BlockGenusMember>
+				<BlockGenusMember>Esplora_tone</BlockGenusMember>
+				<BlockGenusMember>Esplora_notone</BlockGenusMember>
+				<BlockGenusMember>Esplora_Slider</BlockGenusMember>
+				<BlockGenusMember>Esplora_Microphone</BlockGenusMember>
+				<BlockGenusMember>Esplora_LightSensor</BlockGenusMember>
+				<BlockGenusMember>Esplora_Temp</BlockGenusMember>
+				<BlockGenusMember>Esplora_Switch</BlockGenusMember>
+				<BlockGenusMember>Esplora_JoystickSwitch2</BlockGenusMember>
+				<BlockGenusMember>Esplora_JoystickX</BlockGenusMember>
+				<BlockGenusMember>Esplora_JoystickSwitch</BlockGenusMember>
+				<BlockGenusMember>Esplora_AccelerationX</BlockGenusMember>
+				<BlockGenusMember>ESPLORA_INA</BlockGenusMember>
+				<BlockGenusMember>ESPLORA_OUTA</BlockGenusMember>
+				<BlockGenusMember>Esplora_Mouse_Click</BlockGenusMember>
+				<BlockGenusMember>Esplora_Mouse_isPressed</BlockGenusMember>
+				<BlockGenusMember>Esplora_Mouse_move</BlockGenusMember>
+				<BlockGenusMember>Esplora_Keyboard_Click</BlockGenusMember>
+				<BlockGenusMember>Esplora_Keyboard_ReleaseAll</BlockGenusMember>
+				<BlockGenusMember>Esplora_Keyboard_print</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Background</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Height</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Point</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Line</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Circle</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Rect</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Text</BlockGenusMember>
+				<BlockGenusMember>Esplora_Load_Image</BlockGenusMember>
+				<BlockGenusMember>variable_PImage</BlockGenusMember>
+				<BlockGenusMember>Esplora_Image_Width</BlockGenusMember>
+				<BlockGenusMember>Esplora_Image_isValid</BlockGenusMember>
+				<BlockGenusMember>Esplora_TFT_Display_Image</BlockGenusMember>
+				<BlockGenusMember>Espora_SD_Write</BlockGenusMember>
+				<BlockGenusMember>Espora_SD_Begin</BlockGenusMember>
+				<BlockGenusMember>Esplora_Setter_Variable_File</BlockGenusMember>
+				<BlockGenusMember>Esplora_Variable_File</BlockGenusMember>
+				<BlockGenusMember>Esplora_Variable_File_Bool</BlockGenusMember>
+				<BlockGenusMember>Esplora_File_Available</BlockGenusMember>
+				<BlockGenusMember>Esplora_File_Read</BlockGenusMember>
+				<BlockGenusMember>Esplora_File_Close</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="216 5 10" name="bd.adafruit"
+				type="factory">
+				<BlockGenusMember>ada_dc_motor_fwd</BlockGenusMember>
+				<BlockGenusMember>ada_dc_motor_bwd</BlockGenusMember>
+				<BlockGenusMember>ada_dc_motor_release</BlockGenusMember>
+				<BlockGenusMember>ada_neopixel_init</BlockGenusMember>
+				<BlockGenusMember>ada_neopixel_pixel_colorRGB</BlockGenusMember>
+				<BlockGenusMember>ada_neopixel_show</BlockGenusMember>
+				<BlockGenusMember>ada_neopixel_Brightness</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="0 177 236" name="bd.makeblock"
+				type="factory">
+				<BlockGenusMember>me_ultrasonic_sensor</BlockGenusMember>
+				<BlockGenusMember>me_linefinder</BlockGenusMember>
+				<BlockGenusMember>me_limitswitch</BlockGenusMember>
+				<BlockGenusMember>me_shutter</BlockGenusMember>
+				<BlockGenusMember>me_motordriver</BlockGenusMember>
+				<BlockGenusMember>me_servodriver</BlockGenusMember>
+				<BlockGenusMember>me_stepper_motor</BlockGenusMember>
+				<BlockGenusMember>me_infraredreceiver</BlockGenusMember>
+				<BlockGenusMember>me_bluetooth_read</BlockGenusMember>
+				<BlockGenusMember>me_bluetooth_write</BlockGenusMember>
+				<BlockGenusMember>me_bluetooth_commands</BlockGenusMember>
+				<BlockGenusMember>me_bluetooth_command</BlockGenusMember>
+				<BlockGenusMember>me_port_1</BlockGenusMember>
+				<BlockGenusMember>me_motor_1</BlockGenusMember>
+				<BlockGenusMember>me_shutter_1</BlockGenusMember>
+			</BlockDrawer>
+			<!-- <BlockDrawer button-color="225 116 116" name="bd.workshop" type="factory"> 
+				<BlockGenusMember>ws_setting</BlockGenusMember> <BlockGenusMember>ws_go_forward</BlockGenusMember> 
+				<BlockGenusMember>ws_go_backward</BlockGenusMember> <BlockGenusMember>ws_stop</BlockGenusMember> 
+				<BlockGenusMember>ws_turn_left</BlockGenusMember> <BlockGenusMember>ws_turn_right</BlockGenusMember> 
+				<BlockGenusMember>ws_go_forward_left</BlockGenusMember> <BlockGenusMember>ws_go_forward_right</BlockGenusMember> 
+				<BlockGenusMember>ws_go_backward_left</BlockGenusMember> <BlockGenusMember>ws_go_backward_right</BlockGenusMember> 
+				<BlockGenusMember>ws_light</BlockGenusMember> <BlockGenusMember>ws_scan</BlockGenusMember> 
+				<BlockGenusMember>ws_music</BlockGenusMember> <BlockGenusMember>ws_wireless</BlockGenusMember> 
+				<BlockGenusMember>ws_danger</BlockGenusMember> <BlockGenusMember>ws_binoculars</BlockGenusMember> 
+				</BlockDrawer> -->
+			<BlockDrawer button-color="64 109 0" name="bd.insectbot">
+				<BlockGenusMember>insectbot_get_distance</BlockGenusMember>
+				<BlockGenusMember>insectbot_is_indanger</BlockGenusMember>
+				<BlockGenusMember>insectbot_go_forward</BlockGenusMember>
+				<BlockGenusMember>insectbot_go_backright</BlockGenusMember>
+				<BlockGenusMember>insectbot_turn_left</BlockGenusMember>
+				<BlockGenusMember>insectbot_blink_led</BlockGenusMember>
+			</BlockDrawer>
+			<!-- iDrawing -->
+			<BlockDrawer button-color="255 102 0" name="bd.iDrawing">
+				<BlockGenusMember>iDrawing_set_para</BlockGenusMember>
+				<BlockGenusMember>iDrawing_run</BlockGenusMember>
+				<BlockGenusMember>iDrawing_rule_start</BlockGenusMember>
+				<BlockGenusMember>iDrawing_rule_stop</BlockGenusMember>
+				<BlockGenusMember>iDrawing_rule_sleep</BlockGenusMember>
+
+				<BlockGenusMember>iDrawing_trigger_time</BlockGenusMember>
+				<BlockGenusMember>iDrawing_trigger_dpin</BlockGenusMember>
+				<BlockGenusMember>iDrawing_trigger_apin</BlockGenusMember>
+
+				<BlockGenusMember>iDrawing_actuator_led</BlockGenusMember>
+				<BlockGenusMember>iDrawing_actuator_playermini</BlockGenusMember>
+				<BlockGenusMember>iDrawing_actuator_dpin</BlockGenusMember>
+
+				<BlockGenusMember>port_pin_name</BlockGenusMember>
+				<BlockGenusMember>led_mode_flash</BlockGenusMember>
+				<BlockGenusMember>led_mode_fade</BlockGenusMember>
+				<BlockGenusMember>player_mode_random</BlockGenusMember>
+				<BlockGenusMember>player_mode_single</BlockGenusMember>
+				<BlockGenusMember>output_mode_high</BlockGenusMember>
+				<BlockGenusMember>output_mode_low</BlockGenusMember>
+				<BlockGenusMember>output_mode_highpulse</BlockGenusMember>
+				<BlockGenusMember>output_mode_lowpulse</BlockGenusMember>
+				<BlockGenusMember>trigger_equal</BlockGenusMember>
+				<BlockGenusMember>trigger_greater</BlockGenusMember>
+				<BlockGenusMember>trigger_less</BlockGenusMember>
+			</BlockDrawer>
+			<!-- littlebits -->
+			<BlockDrawer button-color="93 13 125" name="bd.littlebits">
+				<BlockGenusMember>little_bits_bendsensor</BlockGenusMember>
+				<BlockGenusMember>little_bits_button</BlockGenusMember>
+				<BlockGenusMember>little_bits_dimmer</BlockGenusMember>
+				<BlockGenusMember>little_bits_lightsensor</BlockGenusMember>
+				<BlockGenusMember>little_bits_lighttrigger</BlockGenusMember>
+				<BlockGenusMember>little_bits_microphone</BlockGenusMember>
+				<BlockGenusMember>little_bits_motiontrigger</BlockGenusMember>
+				<BlockGenusMember>little_bits_pressuresensor</BlockGenusMember>
+				<BlockGenusMember>little_bits_pulse</BlockGenusMember>
+				<BlockGenusMember>little_bits_remotetrigger</BlockGenusMember>
+				<BlockGenusMember>little_bits_rollerswitch</BlockGenusMember>
+				<BlockGenusMember>little_bits_slidedimmer</BlockGenusMember>
+				<BlockGenusMember>little_bits_slideswitch</BlockGenusMember>
+				<BlockGenusMember>little_bits_soundtrigger</BlockGenusMember>
+				<BlockGenusMember>little_bits_timeout</BlockGenusMember>
+				<BlockGenusMember>little_bits_toggleswitch</BlockGenusMember>
+				<BlockGenusMember>little_bits_mix</BlockGenusMember>
+				<BlockGenusMember>little_bits_oscillator</BlockGenusMember>
+				<BlockGenusMember>little_bits_random</BlockGenusMember>
+				<BlockGenusMember>little_bits_bargraph</BlockGenusMember>
+				<BlockGenusMember>little_bits_brightled</BlockGenusMember>
+				<BlockGenusMember>little_bits_dcmotor</BlockGenusMember>
+				<BlockGenusMember>little_bits_fan</BlockGenusMember>
+				<BlockGenusMember>little_bits_ir_led</BlockGenusMember>
+				<BlockGenusMember>little_bits_led</BlockGenusMember>
+				<BlockGenusMember>little_bits_lightwire</BlockGenusMember>
+				<BlockGenusMember>little_bits_longled</BlockGenusMember>
+				<BlockGenusMember>little_bits_number</BlockGenusMember>
+				<BlockGenusMember>little_bits_rgbled</BlockGenusMember>
+				<BlockGenusMember>little_bits_uvled</BlockGenusMember>
+				<BlockGenusMember>little_bits_vibration_motor</BlockGenusMember>
+				<BlockGenusMember>little_bits_synthspeaker</BlockGenusMember>
+			</BlockDrawer>
+
+			<!-- keenlon -->
+			<BlockDrawer button-color="20 150 30" name="bd.ke-keenlon">
+				<BlockGenusMember>ke-motor-run</BlockGenusMember>
+				<BlockGenusMember>ke-motor-setmoto</BlockGenusMember>
+				<BlockGenusMember>ke-motor-stop</BlockGenusMember>
+				<BlockGenusMember>ke-tft-print</BlockGenusMember>
+				<BlockGenusMember>ke-tft-add</BlockGenusMember>
+				<BlockGenusMember>ke-tft-clear</BlockGenusMember>
+				<BlockGenusMember>ke-eye-minvalue</BlockGenusMember>
+				<BlockGenusMember>ke-eye-minindex</BlockGenusMember>
+				<BlockGenusMember>ke-eye-maxvalue</BlockGenusMember>
+				<BlockGenusMember>ke-eye-maxindex</BlockGenusMember>
+				<BlockGenusMember>ke-button-getbutton</BlockGenusMember>
+				<BlockGenusMember>ke-encoder-clear</BlockGenusMember>
+				<BlockGenusMember>ke-encoder-getencoder</BlockGenusMember>
+				<BlockGenusMember>ke-compass</BlockGenusMember>
+				<BlockGenusMember>ke-buzzer</BlockGenusMember>
+				<BlockGenusMember>ke-relays</BlockGenusMember>
+				<BlockGenusMember>ke-led-on-off</BlockGenusMember>
+				<BlockGenusMember>ke-led-pwm</BlockGenusMember>
+				<BlockGenusMember>ke-touch</BlockGenusMember>
+				<BlockGenusMember>ke-ground-light</BlockGenusMember>
+				<BlockGenusMember>ke-light</BlockGenusMember>
+				<BlockGenusMember>ke-photo</BlockGenusMember>
+				<BlockGenusMember>ke-potentiometer</BlockGenusMember>
+				<BlockGenusMember>ke-tempe</BlockGenusMember>
+				<BlockGenusMember>ke-psd</BlockGenusMember>
+				<BlockGenusMember>ke-servo</BlockGenusMember>
+			</BlockDrawer>
+
+			<BlockDrawer button-color="152 29 155" name="bd.jerusalab"
+				type="factory">
+				<BlockGenusMember>midi_command</BlockGenusMember>
+				<!-- <BlockGenusMember>midi_note</BlockGenusMember> -->
+			</BlockDrawer>
+			<!-- <BlockDrawer button-color="135 206 235" name="bd.linksprite_LinkerKit"> 
+				<BlockGenusMember>ls_10mmLEDModule</BlockGenusMember> <BlockGenusMember>ls_5mmLEDModule</BlockGenusMember> 
+				<BlockGenusMember>ls_AccelerometerModule_x</BlockGenusMember> <BlockGenusMember>ls_AccelerometerModule_y</BlockGenusMember> 
+				<BlockGenusMember>ls_AccelerometerModule_z</BlockGenusMember> <BlockGenusMember>ls_ButtonModule</BlockGenusMember> 
+				<BlockGenusMember>ls_BuzzerModule</BlockGenusMember> <BlockGenusMember>ls_HallSensor</BlockGenusMember> 
+				<BlockGenusMember>ls_HighPowerLedModule</BlockGenusMember> <BlockGenusMember>ls_JoystickSensorModule_x</BlockGenusMember> 
+				<BlockGenusMember>ls_JoystickSensorModule_y</BlockGenusMember> <BlockGenusMember>ls_LDRModule</BlockGenusMember> 
+				<BlockGenusMember>ls_LEDBar</BlockGenusMember> <BlockGenusMember>ls_Linear-SlidePotentiometerModule</BlockGenusMember> 
+				<BlockGenusMember>ls_MagneticSwitch</BlockGenusMember> <BlockGenusMember>ls_MosfetModule</BlockGenusMember> 
+				<BlockGenusMember>ls_RelayModule</BlockGenusMember> <BlockGenusMember>ls_RotaryPotentiometerModule</BlockGenusMember> 
+				<BlockGenusMember>ls_RTCModule</BlockGenusMember> <BlockGenusMember>ls_SoundSensor</BlockGenusMember> 
+				<BlockGenusMember>ls_ThermalModule</BlockGenusMember> <BlockGenusMember>ls_TiltModule</BlockGenusMember> 
+				<BlockGenusMember>ls_TouchSensorModule</BlockGenusMember> </BlockDrawer> -->
+			<!-- <BlockDrawer button-color="0 255 0" name="XinChejian" type="factory"> 
+				<BlockGenusMember>xcj_motor_forward</BlockGenusMember> <BlockGenusMember>xcj_motor_backward</BlockGenusMember> 
+				<BlockGenusMember>xcj_ms_digital_read</BlockGenusMember> <BlockGenusMember>xcj_ms_digital_write</BlockGenusMember> 
+				</BlockDrawer> -->
+			<!-- Shapes are automatically loaded as blocks in the Shapes drawer (see 
+				slcodeblocks.ShapeBlocksGenerator for details) -->
+			<!-- Sound blocks reside in the auto-generated String drawer. (see slcodeblocks.SoundBlocksGenerator 
+				for details) -->
+		</BlockDrawerSet>
+	</BlockDrawerSets>
+
+	<Pages drawer-with-page="yes">
+		<Page page-name="Main" page-width="400" page-color="128 128 128" />
+	</Pages>
+
+	<TrashCan>
+		<OpenTrashImage>com/ardublock/block/trash_open.png</OpenTrashImage>
+		<ClosedTrashImage>com/ardublock/block/trash.png</ClosedTrashImage>
+	</TrashCan>
+
+	<MFEModuleFun>
+
+
+		<!-- Control -->
+		<Module type="0" import="Control">
+			<Fun name="getSW1" text="  $.getSW1();//返回True或False，True表示被按下"></Fun>
+			<Fun name="getSW2" text="  $.getSW2();//返回True或False，True表示被按下"></Fun>
+			<Fun name="getSW3" text="  $.getSW3();//返回KEY_LEFT或KEY_RIGHT"></Fun>
+			<Fun name="getSW4" text="  $.getSW4();//返回圆盘电阻器旋转位置，范围0-100"></Fun>
+			<Fun name="getM1" text="  $.getM1();//返回True或False，True代表触摸成功"></Fun>
+			<Fun name="getM2" text="  $.getM2();//返回True 或False，True代表触摸成功"></Fun>
+			<Fun name="setSensitivity" text="  $.setSensitivity(50);//调节触摸灵敏度0-100">
+			</Fun>
+			<Fun name="KEY_LEFT" text="KEY_LEFT"></Fun>
+			<Fun name="KEY_RIGHT" text="KEY_RIGHT"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="SW1Press" text="$.addInterrupter($SW1Press, SW1|PRESS);//控制模块SW1被按下" type="Interrupt"></Fun>
+			<Fun name="SW1Release" text="$.addInterrupter($SW1Release, SW1|RELEASE);//控制模块SW1被按后放手" type="Interrupt"></Fun>
+			<Fun name="SW2Press" text="$.addInterrupter($SW2Press, SW2|PRESS);//控制模块SW2被按下" type="Interrupt"></Fun>
+			<Fun name="SW2Release" text="$.addInterrupter($SW2Release, SW2|RELEASE);//控制模块SW2被按后放手" type="Interrupt"></Fun>
+			<Fun name="SW3Left" text="$.addInterrupter($SW3Left, SW3|LEFT);//控制模块SW3拨向左边" type="Interrupt"></Fun>
+			<Fun name="SW3Right" text="$.addInterrupter($SW3Right, SW3|RIGHT);//控制模块SW3拨向右边" type="Interrupt"></Fun>
+			<Fun name="SW4Variety" text="$.addInterrupter($SW4Variety, SW4|VARY);//控制模块SW4被改变" type="Interrupt"></Fun>
+			<Fun name="SW4Right" text="$.addInterrupter($SW4Right, SW4|UPDATE);//控制模块SW4有数据更新" type="Interrupt"></Fun>
+			<Fun name="M1Press" text="$.addInterrupter($M1Press, M1|PRESS);//控制模块M1被触摸" type="Interrupt"></Fun>
+			<Fun name="M1Release" text="$.addInterrupter($M1Release, M1|RELEASE);//控制模块M1被触摸后放手" type="Interrupt"></Fun>
+			<Fun name="M2Press" text="$.addInterrupter($M2Press, M2|PRESS);//控制模块M2被触摸" type="Interrupt"></Fun>
+			<Fun name="M2Release" text="$.addInterrupter($M2Release, M2|RELEASE);//控制模块M2被触摸后放手" type="Interrupt"></Fun>
+			
+		</Module>
+
+		<!-- Signal -->
+		<Module type="1" import="Signal">
+			<Fun name="setLedRGB" text="$.setRGB(30, 20, 10);//按照RGB配比LED，范围都是0-255"></Fun>
+			<!--<Fun name="setLed" text=" $.setRGB(&lt;-RGB_R-&gt;);"></Fun> -->
+			<Fun name="setBuzzer" text="$.setBuzzer(300);//蜂鸣器振动频率，范围是0-20000Hz，参数为0时，蜂鸣器关闭"></Fun>
+			<Fun name="setBuzzer_ad"
+				text="$.setBuzzer(300, 20);//第一个参数是振动频率，范围是20-20000；第二个参数是响度，范围是0-100"></Fun>
+			<Fun name="setVibration" text="$.setVibration(50);//设置振动强度，范围是0-100"></Fun>
+			<!-- <Fun name="LED_RED" text="RGB_R"></Fun> <Fun name="LED_GREEN" text="RGB_G"></Fun> 
+				<Fun name="LED_BLUE" text="RGB_B"></Fun> <Fun name="LED_YELLOW" text="RGB_Y"></Fun> 
+				<Fun name="LED_PURPLE" text="RGB_P"></Fun> <Fun name="LED_LIGHT_BLUE" text="RGB_LB"></Fun> 
+				<Fun name="LED_WHITE" text="RGB_W"></Fun> <Fun name="LED_None" text="RGB_None"></Fun> -->
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+		</Module>
+		<!-- Driver -->
+		<Module type="2" import="Driver">
+			<Fun name="setMotorA"
+				text="$.setMotorA(DC_DIR_Foreward, 50);//第一个参数有两个方向可选，第二个参数表示功率，范围是0-200"></Fun>
+			<Fun name="setMotorB"
+				text="$.setMotorB(DC_DIR_Foreward, 50);//第一个参数有两个方向可选，第二个参数表示功率，范围是0-200"></Fun>
+			<Fun name="DC_DIR_Foreward" text="DC_DIR_Foreward"></Fun>
+			<Fun name="DC_DIR_Reversal" text="DC_DIR_Reversal"></Fun>
+			<Fun name="stopMotorA" text="  $.stopMotorA();//停止电机"></Fun>
+			<Fun name="stopMotorB" text="  $.stopMotorB();//停止电机"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+		</Module>
+		<!-- Display -->
+		<Module type="3" import="Display">
+			<Fun name="print" text='$.print( "WonderBits");//显示数字，字符串，变量等，跟在上一次显示之后'></Fun>
+			<Fun name="print_xy"
+				text='$.print(1, 1, 12345);//按照坐标显示内容，格式为纵坐标，横坐标，（第几行，第几列），显示内容'></Fun>
+			<Fun name="print_advance"
+				text='$.print(1, 1,"WonderBits", SIZE_SMALL, SHOW_NORMAL);//后两个参数可以选择字体大小（SIZE_SMALL 或SIZE_BIG），和是否黑白反转（SHOW_NORMAL或SHOW_SHADOW）'></Fun>
+			<Fun name="setDisplayDirection"
+				text="$.setDisplayDirection(DIR_ROTATED);//参数设置是否要翻转显示（DIR_ROTATED或DIR_INITIAL）"></Fun>
+			<Fun name="enablePageturning" text="  $.enablePageturning();//允许翻页功能（右侧白条显示页数）"></Fun>
+			<Fun name="disablePageturning" text="  $.disablePageturning();//关闭翻页功能"></Fun>
+			<Fun name="getPagetButton"
+				text="  $.getPagetButton();//返回按钮动作，BUTTON_NONE /BUTTON_L /BUTTON_R /BUTTON_M /BUTTON_ML 分别代表没有按下／左键／右键／中键／中键长按"></Fun>
+			<Fun name="clearAllPages" text="  $.clearAllPages();//擦除所有显示内容"></Fun>
+			<Fun name="clearPage" text="$.clearPage(1);//擦除某个页"></Fun>
+			<Fun name="trunToPage" text="  $.trunToPage(1);//转到特定一页显示"></Fun>
+			<Fun name="SIZE_SMALL" text="SIZE_SMALL"></Fun>
+			<Fun name="SIZE_BIG" text="SIZE_BIG"></Fun>
+			<Fun name="DIR_ROTATED" text="DIR_ROTATED"></Fun>
+			<Fun name="DIR_INITIAL" text="DIR_INITIAL"></Fun>
+			<Fun name="SHOW_NORMAL" text="SHOW_NORMAL"></Fun>
+			<Fun name="SHOW_SHADOW" text="SHOW_SHADOW"></Fun>
+			<Fun name="BUTTON_NONE" text="BUTTON_NONE"></Fun>
+			<Fun name="BUTTON_L" text="BUTTON_L"></Fun>
+			<Fun name="BUTTON_R" text="BUTTON_R"></Fun>
+			<Fun name="BUTTON_M" text="BUTTON_M"></Fun>
+			<Fun name="BUTTON_ML" text="BUTTON_ML"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="ButtonLeft" text="$.addInterrupter($ButtonLeft, LEFT); //显示模块按钮拨向左边" type="Interrupt"></Fun>
+			<Fun name="ButtonRight" text="$.addInterrupter($ButtonRight, RIGHT); //显示模块按钮拨向右边" type="Interrupt"></Fun>
+			<Fun name="ButtonPress" text="$.addInterrupter($ButtonPress, MIDDLE); //显示模块按钮被按下（中间）" type="Interrupt"></Fun>
+			<Fun name="ButtonLongPress" text="$.addInterrupter($ButtonLongPress, LONG_MIDDLE); //显示模块按钮被长按（长按）" type="Interrupt"></Fun>
+			
+		</Module>
+
+		<!-- Observer -->
+		<Module type="4" import="Observer">
+			<Fun name="getTemperature" text="  $.getTemperature();//获取空气温度，单位摄氏度"></Fun>
+			<Fun name="getHumidity" text="  $.getHumidity();//获取空气湿度，范围0-100%RH"></Fun>
+			<Fun name="getLight" text="  $.getLight();//获取环境亮度，范围0-100"></Fun>
+			<Fun name="getVolume" text="  $.getVolume();//获取音量大小，范围0-100"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="LightVariety" text="$.addInterrupter($LightVariety, LIGHT|VARY);//环境监测模块光强值改变" type="Interrupt"></Fun>
+			<Fun name="LightUpdate" text="$.addInterrupter($LightUpdate, LIGHT|UPDATE);//电源模块光强值更新" type="Interrupt"></Fun>
+			<Fun name="VolumeVariety" text="$.addInterrupter($VolumeVariety,VOLUME|VARY);//环境监测模块声强值改变" type="Interrupt"></Fun>
+			<Fun name="VolumeUpdate" text="$.addInterrupter($VolumeUpdate,VOLUME|UPDATE);//电源模块声强值更新" type="Interrupt"></Fun>
+			<Fun name="TemperatureVariety" text="$.addInterrupter($TemperatureVariety,TEMP|VARY);//环境监测模块温度值改变" type="Interrupt"></Fun>
+			<Fun name="TemperatureUpdate" text="$.addInterrupter($TemperatureUpdate,TEMP|UPDATE);//电源模块温度值更新" type="Interrupt"></Fun>
+			<Fun name="HumidityVariety" text="$.addInterrupter($HumidityVariety,HUMI|VARY);//环境监测模块湿度值改变" type="Interrupt"></Fun>
+			<Fun name="HumidityUpdate" text="$.addInterrupter($HumidityUpdate,HUMI|UPDATE);//电源模块湿度值更新" type="Interrupt"></Fun>
+		</Module>
+		<!-- Power -->
+		<Module type="5" import="Power">
+			<Fun name="getBatteryValue" text="  $.getBatteryValue();//返回电量值，范围0-100"></Fun>
+			<Fun name="shutdownTime" text="  $.shutDown(2.5);//控制电池定时断电，参数为0时立即断电"></Fun>
+			<Fun name="lightsOn" text="  $.lightsOn();//开启四个电源指示灯（初始状态）"></Fun>
+			<Fun name="lightsOff" text="  $.lightsOff();//关闭四个电源指示灯"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="BatteryVariety" text="$.addInterrupter($BatteryVariety, VARY);//电源模块电量值改变" type="Interrupt"></Fun>
+			<Fun name="BatteryUpdate" text="$.addInterrupter($BatteryUpdate, UPDATE);//电源模块电量值更新" type="Interrupt"></Fun>
+		</Module>
+		<!-- Motion -->
+		<Module type="6" import="Motion">
+			<Fun name="getAcceleration" text="$.getAcceleration(SPACE_X);//获取加速度"></Fun>
+			<Fun name="getAngularVelocity" text="$.getAngularVelocity(SPACE_X);//获取角速度"></Fun>
+			<Fun name="getAngle" text="$.getAngle(SPACE_X);//获取绕某一轴的旋转角度"></Fun>
+			<Fun name="getMagnetometer" text="$.getMagnetometer();//获取模块与正南方向夹角，范围-180度到180度"></Fun>
+			<Fun name="calibrateGyroAccelerometer"
+				text="$.calibrateGyroAccelerometer();//校正加速度计，函数运行时模块亮紫色灯，这时需保持水平且静止"></Fun>
+			<Fun name="calibrateMagnetometer"
+				text="$.calibrateMagnetometer();//校正磁力计，函数运行时模块亮紫色灯，需要用户绕三个轴各旋转一周，需远离任何金属物体"></Fun>
+			<Fun name="SPACE_X" text="SPACE_X"></Fun>
+			<Fun name="SPACE_Y" text="SPACE_Y"></Fun>
+			<Fun name="SPACE_Z" text="SPACE_Z"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="DataUpdate" text="$.addInterrupter($DataUpdate, UPDATE); //运动模块数据更新(约10ms一次)" type="Interrupt"></Fun>
+		</Module>
+		<!-- Distance -->
+		<Module type="7" import="Distance">
+			<Fun name="getDistance" text="  $.getDistance();//获得与障碍物间的距离，范围0-1000毫米"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="DistanceVariety" text="$.addInterrupter($DistanceVariety, VARY);//距离模块距离改变" type="Interrupt"></Fun>
+			<Fun name="DistanceUpdate" text="$.addInterrupter($DistanceUpdate, UPDATE);//距离模块距离更新" type="Interrupt"></Fun>
+		</Module>
+		<!-- Communication -->
+		<Module type="8" import="Communication">
+			<Fun name="storeIRmessage"
+				text="  $.storeIRmessage();//执行这个函数的时候，模块灯亮黄色代表正在捕获红外数据，当黄色灯变为蓝色时红外数据捕获完毕，并且被存在模块中"></Fun>
+			<Fun name="sendIRmessage" text="  $.sendIRmessage();//发送保存好的红外信号"></Fun>
+			<Fun name="write" text="  $.write(1);//发送任意数据，参数范围0-20000"></Fun>
+			<Fun name="available" text="  $.available();//返回信息条数，返回0表示无新信息，最多存放16条信息"></Fun>
+			<Fun name="read" text="  $.read();//返回整数数据，范围0-20000"></Fun>
+			<Fun name="setOnboardRGB" text="$.setOnboardRGB(RGB_R);//控制板载彩色灯"></Fun>
+			<Fun name="DataReceive" text="$.addInterrupter($DataReceive, IRRECEIVE);//通信模块接受数据" type="Interrupt"></Fun>
+		</Module>
+		<!-- tool -->
+		<Module type="9" import="null">
+			<Fun name="delay" text="delay(1000);"></Fun>
+			<Fun name="if" text="if( )&#x000D;{&#x000D;&#x000D;}"></Fun>
+			<Fun name="ifelse"
+				text="if( )&#x000D; {&#x000D; &#x000D; } &#x000D; else &#x000D; {&#x000D; &#x000D; }"></Fun>
+			<Fun name="while" text="while( )&#x000D;{&#x000D;&#x000D;}"></Fun>
+			<Fun name="for" text="for(int i= 0;i ;i++) &#x000D; {&#x000D; &#x000D;}"></Fun>
+			<Fun name="True" text="true"></Fun>
+			<Fun name="False" text="false"></Fun>
+			<Fun name="setupFun" text="void setup()  
+										&#x000D;{//只在系统开始时执行一次&#x000D;&#x000D;
+										}"></Fun>
+
+		</Module>
+		<!-- Add -->
+		<Module type="10" import="null">
+			<Fun name="addControl" text="null"></Fun>
+			<Fun name="addSignal" text="null"></Fun>
+			<Fun name="addDriver" text="null"></Fun>
+			<Fun name="addDisplay" text="null"></Fun>
+			<Fun name="addObserver" text="null"></Fun>
+			<Fun name="addPower" text="null"></Fun>
+			<Fun name="addMotion" text="null"></Fun>
+			<Fun name="addDistance" text="null"></Fun>
+			<Fun name="addCommunication" text="null"></Fun>
+		</Module>
+		
+		<!-- Master -->
+		<Module type="11" import="SysMaster">
+			<Fun name="reset" text="sysmaster.reset(2.5);//控制模块定时复位，参数为0时立即复位"></Fun>
+			<Fun name="m_write" text="sysmaster.write(variable);//写入变量值，可以是int，char，float，结构体，写入成功后地址后移"></Fun>
+			<Fun name="m_read" text="sysmaster.read(variable);//将值读取到变量中，读取类型由变量决定，可以是int，char，float，结构体"></Fun>
+			<Fun name="m_available" text="sysmaster.available();//返回未读取内容的大小，只能访问通过直接写入EEPROM的内容"></Fun>
+			<Fun name="m_clear" text="sysmaster.clear();//清除EEPROM中的内容"></Fun>
+			<Fun name="m_writeAD" text="sysmaster.write(address,variable);//可通过写入地址控制写入变量的位置"></Fun>
+			<Fun name="m_readAD" text="sysmaster.read(address,variable);//返回该地址中对应变量的值"></Fun>
+			
+		</Module>
+	</MFEModuleFun>
+
+</BlockLangDef>
+
+
+
+
+
